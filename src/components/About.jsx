@@ -13,6 +13,9 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import ExploreIcon from '@mui/icons-material/Explore';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PublicIcon from '@mui/icons-material/Public';
+import sheane from '../img/card/mheanee.jpg';
+import mario from '../img/card/mario.jpg';
+import maya from '../img/card/maya.jpg';
 
 const teamMembers = [
     {
@@ -20,18 +23,21 @@ const teamMembers = [
       role: 'Founder & Chief Explorer',
       bio: 'Sheane’s love for rivers began during childhood fishing trips with her grandfather. She’s the one who wades into icy streams to capture that perfect shot.',
       imgN: 'mheane.jpg',
+      src: sheane,
     },
     {
       name: 'Mario “Valley Whisperer” Peaks',
       role: 'Creative Director & Landscape Guru',
       bio: 'Mario’s heart belongs to valleys—their contours, their echoes. He once camped solo in the Grand Canyon just to feel its ancient embrace.',
       imgN: 'mario.jpg',
+      src: mario,
     },
     {
       name: 'Maya “Pixel Shaman” Sky',
       role: 'Visual Storyteller & Design Sorceress',
       bio: 'Maya weaves magic with pixels. Her artistry turns valleys into poetry and rivers into symphonies. She believes every pixel has a tale to tell.',
       imgN: 'maya.jpg',
+      src: maya,
     },
   ];
 
@@ -99,7 +105,7 @@ const About = () => {
                         {teamMembers.map((member, index) => (
                             <Grid item xs={12} md={4} key={index}>
                             <StyledPaper elevation={3}>
-                                <Avatar sx={{ width: 100, height: 100, margin: '0 auto 20px' }} alt={member.name} src="../img/card/mario.jpg" />
+                                <Avatar sx={{ width: 100, height: 100, margin: '0 auto 20px' }} alt={member.name} src={member.src} />
                                 <Typography variant="h6">{member.name}</Typography>
                                 <Typography variant="subtitle1">{member.role}</Typography>
                                 <Typography variant="body2">{member.bio}</Typography>
