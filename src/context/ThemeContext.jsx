@@ -24,7 +24,7 @@ const ThemeContextProvider = ({ children }) => {
     }
 
     return (
-        <ThemeContext.Provider value={ toggleTheme }>
+        <ThemeContext.Provider value={ {darkMode, toggleTheme} }>
             <ThemeProvider theme={theme}>
                 {children}
             </ThemeProvider>

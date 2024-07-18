@@ -4,6 +4,8 @@ import { CatchingPokemon } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from '../context/ThemeContext'
 import { styled } from '@mui/material/styles'
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const StyledAppBar = styled(AppBar)(( { theme } ) => ({
   // if the theme is dark, the background color will be black, otherwise white
@@ -29,7 +31,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const toggleTheme = useContext(ThemeContext)
+  const { darkMode, toggleTheme } = useContext(ThemeContext)
 
   return (
     <StyledAppBar position='static'>
@@ -42,7 +44,9 @@ const Navbar = () => {
           <StyledLink to='/home' ><StyledButton color='inherit'>Home</StyledButton></StyledLink>
           <StyledLink to='/about' ><StyledButton color='inherit'>About</StyledButton></StyledLink>
           <StyledLink to='/contact-us' ><StyledButton color='inherit'>Contact Us</StyledButton></StyledLink>
-          <StyledButton color='inherit' onClick={toggleTheme}>Toggle Theme</StyledButton>
+              <Button color='inherit' onClick={toggleTheme}>
+              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              </Button>
         </Stack>
       </Toolbar>
     </StyledAppBar>
